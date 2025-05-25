@@ -1,56 +1,86 @@
-      import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { motion } from "framer-motion"; import { FaUserMd, FaClinicMedical, FaFlask, FaWhatsapp } from "react-icons/fa";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NurMed - Healthcare at Your Threshold</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background-color: #00695c;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 2rem;
+    }
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+    .whatsapp-float i {
+      margin-top: 16px;
+    }
+    .feedback {
+      margin-top: 30px;
+    }
+    input, textarea {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #00695c;
+      color: white;
+      border: none;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
 
-export default function Home() { return ( <div className="bg-white text-gray-900"> {/* Hero Section */} <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gradient-to-b from-white to-blue-50"> <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-4xl md:text-6xl font-bold text-blue-900"> NurMed </motion.h1> <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="mt-4 text-lg md:text-xl max-w-xl"> Global Healthcare, Local Touch </motion.p> <div className="mt-6 flex gap-4"> <Button className="bg-blue-800 text-white">Book Appointment</Button> <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer"> <Button variant="outline" className="border-blue-800 text-blue-800">Chat on WhatsApp</Button> </a> </div> </section>
+  <header>
+    <h1>NurMed</h1>
+    <p>Healthcare at Your Threshold</p>
+  </header>
 
-{/* About Section */}
-  <section className="px-6 py-16 text-center bg-white">
-    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl font-semibold text-blue-900">
-      About NurMed
-    </motion.h2>
-    <p className="mt-4 max-w-2xl mx-auto text-gray-600">
-      NurMed is a visionary global chain of clinics and hospitals committed to delivering accessible, reliable, and innovative healthcare across communities worldwide.
-    </p>
-  </section>
+  <main>
+    <h2>Welcome to NurMed</h2>
+    <p>This platform brings modern, personalized, and accessible healthcare to your fingertips. Multi-language support coming soon.</p>
 
-  {/* Services Section */}
-  <section className="px-6 py-16 bg-blue-50 text-center">
-    <h2 className="text-3xl font-semibold text-blue-900 mb-10">Our Services</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <motion.div whileHover={{ scale: 1.05 }}>
-        <Card className="p-6">
-          <FaClinicMedical className="text-3xl text-blue-800 mx-auto mb-4" />
-          <CardContent>
-            <h3 className="text-xl font-semibold">Clinics</h3>
-            <p className="text-gray-600">Comprehensive general and specialty medical care.</p>
-          </CardContent>
-        </Card>
-      </motion.div>
-      <motion.div whileHover={{ scale: 1.05 }}>
-        <Card className="p-6">
-          <FaFlask className="text-3xl text-blue-800 mx-auto mb-4" />
-          <CardContent>
-            <h3 className="text-xl font-semibold">Labs</h3>
-            <p className="text-gray-600">State-of-the-art diagnostic and pathology testing.</p>
-          </CardContent>
-        </Card>
-      </motion.div>
-      <motion.div whileHover={{ scale: 1.05 }}>
-        <Card className="p-6">
-          <FaUserMd className="text-3xl text-blue-800 mx-auto mb-4" />
-          <CardContent>
-            <h3 className="text-xl font-semibold">Telemedicine</h3>
-            <p className="text-gray-600">Virtual consultations with top medical professionals.</p>
-          </CardContent>
-        </Card>
-      </motion.div>
+    <div class="feedback">
+      <h3>Send Us Your Feedback</h3>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Feedback</button>
+      </form>
     </div>
-  </section>
+  </main>
 
-  {/* WhatsApp Floating Button */}
-  <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg z-50">
-    <FaWhatsapp className="text-2xl" />
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <i>WA</i>
   </a>
-</div>
 
-); }
-
+</body>
+</html>      
