@@ -4,54 +4,117 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NurMed - Healthcare at Your Threshold</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5fdfc;
+      color: #333;
     }
+
     header {
       background-color: #00695c;
       color: white;
-      padding: 1rem;
+      padding: 2rem 1rem;
       text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
-    main {
-      padding: 2rem;
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
-    }
-    .whatsapp-float i {
-      margin-top: 16px;
-    }
-    .feedback {
-      margin-top: 30px;
-    }
-    input, textarea {
-      display: block;
-      width: 100%;
-      padding: 0.5rem;
+
+    header p {
       margin-top: 0.5rem;
+      font-size: 1.2rem;
     }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: #00695c;
+    }
+
+    .feedback-form {
+      margin-top: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline-color: #00695c;
+    }
+
     button {
-      padding: 0.5rem 1rem;
+      width: fit-content;
+      padding: 0.75rem 1.5rem;
       background-color: #00695c;
       color: white;
       border: none;
-      margin-top: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #004d42;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .language-option {
+      text-align: right;
+      margin-bottom: 1rem;
+    }
+
+    .language-option select {
+      padding: 0.3rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      main {
+        margin: 1rem;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -63,24 +126,35 @@
   </header>
 
   <main>
-    <h2>Welcome to NurMed</h2>
-    <p>This platform brings modern, personalized, and accessible healthcare to your fingertips. Multi-language support coming soon.</p>
+    <div class="language-option">
+      <label for="language">Language:</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="ur">Urdu</option>
+        <!-- Add more languages later -->
+      </select>
+    </div>
 
-    <div class="feedback">
+    <h2>Welcome to NurMed</h2>
+    <p style="text-align: center;">
+      We aim to provide trusted, accessible healthcare through digital platforms. More language support and services coming soon.
+    </p>
+
+    <div class="feedback-form">
       <h3>Send Us Your Feedback</h3>
       <form action="https://formspree.io/f/your-form-id" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="_replyto" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Feedback</button>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Submit Feedback</button>
       </form>
     </div>
   </main>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-    <i>WA</i>
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/923105510807" class="whatsapp-button" title="Chat with us on WhatsApp" target="_blank">
+    &#x1F4AC;
   </a>
 
 </body>
-</html>      
+</html>
