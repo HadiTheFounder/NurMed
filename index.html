@@ -1,150 +1,56 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NurMed - Healthcare at Your Threshold</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #007BFF;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-    .container {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h1, h2, h3 {
-      color: #007BFF;
-    }
-    footer {
-      background: #f4f4f4;
-      color: #333;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
-    }
-    .lang-option {
-      text-align: right;
-      padding: 10px;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-size: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 100;
-    }
-    .feedback-form {
-      background-color: #f9f9f9;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
-    .feedback-form input, .feedback-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .feedback-form button {
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>NurMed</h1>
-    <p>Healthcare at your threshold</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#vision">Vision</a>
-      <a href="#how">How It Works</a>
-      <a href="#contact">Contact</a>
-      <a href="#feedback">Feedback</a>
-    </nav>
-  </header>  <div class="lang-option">
-    <label for="lang">Language:</label>
-    <select id="lang">
-      <option value="en">English</option>
-      <option value="ur">Urdu (اردو)</option>
-      <option value="fr">French</option>
-      <option value="ar">Arabic</option>
-    </select>
-  </div>  <section class="container" id="about">
-    <h2>About NurMed</h2>
-    <p>NurMed is a visionary global healthcare system powered by blockchain. Our goal is to bring trusted, secure, and accessible healthcare services to every corner of the world — starting with Pakistan. We believe healthcare should be decentralized, transparent, and always within reach.</p>
-  </section>  <section class="container" id="vision">
-    <h2>Vision & Mission</h2>
-    <p><strong>Vision:</strong> To create a decentralized, patient-first global healthcare ecosystem.</p>
-    <p><strong>Mission:</strong> Empowering communities through digital medical infrastructure, trust, and innovation.</p>
-  </section>  <section class="container" id="how">
-    <h2>How NurMed Works</h2>
-    <ul>
-      <li>Blockchain-based patient records and transparency</li>
-      <li>Mobile access to real-time medical assistance</li>
-      <li>AI-powered diagnostics and recommendations</li>
-      <li>Telehealth integration with certified doctors</li>
-    </ul>
-  </section>  <section class="container">
-    <h2>Why Choose NurMed?</h2>
-    <p>Unlike traditional hospital chains, NurMed focuses on technological accessibility, ethical care, and transparent systems that respect patient ownership over data and health outcomes.</p>
-  </section>  <section class="container">
-    <h2>Future Roadmap</h2>
-    <ol>
-      <li>Launch pilot model in Khyber Pakhtunkhwa</li>
-      <li>Expand to national level clinics and mobile units</li>
-      <li>Build cross-border healthcare data exchange platform</li>
-      <li>Develop NurMed Hospitals and Smart Centers globally</li>
-    </ol>
-  </section>  <section class="container" id="contact">
-    <h2>Contact & Founder</h2>
-    <p><strong>Founder:</strong> Abdul Hadi</p>
-    <p>Email: <a href="mailto:a.hadihanif14@gmail.com">a.hadihanif14@gmail.com</a></p>
-  </section>  <section class="container" id="feedback">
-    <h2>Send Us Your Feedback</h2>
-    <form class="feedback-form" action="https://formspree.io/f/mnqekjrl" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Feedback" rows="5" required></textarea>
-      <button type="submit">Send Feedback</button>
-    </form>
-  </section>  <a class="whatsapp-float" href="https://wa.me/923105510807" target="_blank" title="Chat with us on WhatsApp">
-    ☎
-  </a>  <footer>
-    <p>&copy; 2025 NurMed. All rights reserved.</p>
-  </footer>
-</body>
-      </html>
+      import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { motion } from "framer-motion"; import { FaUserMd, FaClinicMedical, FaFlask, FaWhatsapp } from "react-icons/fa";
+
+export default function Home() { return ( <div className="bg-white text-gray-900"> {/* Hero Section */} <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gradient-to-b from-white to-blue-50"> <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-4xl md:text-6xl font-bold text-blue-900"> NurMed </motion.h1> <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="mt-4 text-lg md:text-xl max-w-xl"> Global Healthcare, Local Touch </motion.p> <div className="mt-6 flex gap-4"> <Button className="bg-blue-800 text-white">Book Appointment</Button> <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer"> <Button variant="outline" className="border-blue-800 text-blue-800">Chat on WhatsApp</Button> </a> </div> </section>
+
+{/* About Section */}
+  <section className="px-6 py-16 text-center bg-white">
+    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl font-semibold text-blue-900">
+      About NurMed
+    </motion.h2>
+    <p className="mt-4 max-w-2xl mx-auto text-gray-600">
+      NurMed is a visionary global chain of clinics and hospitals committed to delivering accessible, reliable, and innovative healthcare across communities worldwide.
+    </p>
+  </section>
+
+  {/* Services Section */}
+  <section className="px-6 py-16 bg-blue-50 text-center">
+    <h2 className="text-3xl font-semibold text-blue-900 mb-10">Our Services</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <motion.div whileHover={{ scale: 1.05 }}>
+        <Card className="p-6">
+          <FaClinicMedical className="text-3xl text-blue-800 mx-auto mb-4" />
+          <CardContent>
+            <h3 className="text-xl font-semibold">Clinics</h3>
+            <p className="text-gray-600">Comprehensive general and specialty medical care.</p>
+          </CardContent>
+        </Card>
+      </motion.div>
+      <motion.div whileHover={{ scale: 1.05 }}>
+        <Card className="p-6">
+          <FaFlask className="text-3xl text-blue-800 mx-auto mb-4" />
+          <CardContent>
+            <h3 className="text-xl font-semibold">Labs</h3>
+            <p className="text-gray-600">State-of-the-art diagnostic and pathology testing.</p>
+          </CardContent>
+        </Card>
+      </motion.div>
+      <motion.div whileHover={{ scale: 1.05 }}>
+        <Card className="p-6">
+          <FaUserMd className="text-3xl text-blue-800 mx-auto mb-4" />
+          <CardContent>
+            <h3 className="text-xl font-semibold">Telemedicine</h3>
+            <p className="text-gray-600">Virtual consultations with top medical professionals.</p>
+          </CardContent>
+        </Card>
+      </motion.div>
+    </div>
+  </section>
+
+  {/* WhatsApp Floating Button */}
+  <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg z-50">
+    <FaWhatsapp className="text-2xl" />
+  </a>
+</div>
+
+); }
+
