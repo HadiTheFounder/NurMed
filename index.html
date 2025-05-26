@@ -1,160 +1,134 @@
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NurMed - Healthcare at Your Threshold</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NurvicaCare</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f5fdfc;
-      color: #333;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
     }
-
-    header {
-      background-color: #00695c;
+    .navbar {
+      background: #0077b6;
       color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
       padding: 1rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.05);
-    }
-
-    h2 {
-      text-align: center;
-      color: #00695c;
-    }
-
-    .feedback-form {
-      margin-top: 2rem;
-    }
-
-    form {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    input, textarea {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      outline-color: #00695c;
-    }
-
-    button {
-      width: fit-content;
-      padding: 0.75rem 1.5rem;
-      background-color: #00695c;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    button:hover {
-      background-color: #004d42;
-    }
-
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      background-color: #25d366;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar a {
       color: white;
-      font-size: 28px;
       text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 1000;
+      font-weight: bold;
     }
-
-    .language-option {
-      text-align: right;
-      margin-bottom: 1rem;
+    .section {
+      display: none;
+      padding: 2rem;
     }
-
-    .language-option select {
-      padding: 0.3rem;
+    .section.active {
+      display: block;
+    }
+    footer {
+      background: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .btn {
+      background: #00b4d8;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
       border-radius: 5px;
-      border: 1px solid #ccc;
     }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      main {
-        margin: 1rem;
-        padding: 1rem;
-      }
+    .dark-mode {
+      background: #121212;
+      color: #f1f1f1;
+    }
+    .dark-mode .navbar, .dark-mode footer {
+      background: #1f1f1f;
     }
   </style>
 </head>
 <body>
+  <header class="navbar">
+    <div class="logo">NurvicaCare</div>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('about')">About</a></li>
+        <li><a href="#" onclick="showSection('services')">Services</a></li>
+        <li><a href="#" onclick="showSection('equipment')">Equipment</a></li>
+        <li><a href="#" onclick="showSection('blog')">Blog</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
+    <button onclick="toggleMode()">Toggle Mode</button>
+  </header>  <div id="home" class="section active">
+    <h1>Welcome to NurvicaCare</h1>
+    <p>Innovative Global Healthcare Network Built for the Future.</p>
+    <a href="#" class="btn" onclick="showSection('about')">Explore Our Vision</a>
+  </div>  <div id="about" class="section">
+    <h2>About Us</h2>
+    <p>Founded by Abdul Hadi, a 16-year-old pre-medical student, NurvicaCare aims to build a vast network of hospitals across the globe.</p>
+  </div>  <div id="services" class="section">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Cardiology</li>
+      <li>Neurology</li>
+      <li>Gynecology</li>
+      <li>Embryology</li>
+      <li>Dermatology</li>
+      <li>Orthopedics</li>
+      <li>Radiology</li>
+      <li>Oncology</li>
+      <li>Pediatrics</li>
+      <li>Urology</li>
+    </ul>
+  </div>  <div id="equipment" class="section">
+    <h2>Modern Equipment</h2>
+    <ul>
+      <li>AI Diagnostic Tools</li>
+      <li>Robotic Surgical Systems</li>
+      <li>Smart ICU Monitors</li>
+      <li>3D Imaging & MRI Machines</li>
+      <li>Blockchain Health Records</li>
+      <li>Telemedicine Kits</li>
+      <li>Remote Patient Monitoring Devices</li>
+    </ul>
+  </div>  <div id="blog" class="section">
+    <h2>Health Blog</h2>
+    <p>Coming soon: Read medical articles and insights from Abdul Hadi.</p>
+  </div>  <div id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>For queries, appointments, or collaborations, reach out:</p>
+    <p>WhatsApp: <a href="https://wa.me/923105510807">0310-5510807</a></p>
+    <form>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea placeholder="Your Message"></textarea><br>
+      <button type="submit">Send</button>
+    </form>
+  </div>  <footer>
+    <p>© 2025 NurvicaCare | Designed by Abdul Hadi</p>
+  </footer>  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
 
-  <header>
-    <h1>NurMed</h1>
-    <p>Healthcare at Your Threshold</p>
-  </header>
-
-  <main>
-    <div class="language-option">
-      <label for="language">Language:</label>
-      <select id="language">
-        <option value="en">English</option>
-        <option value="ur">Urdu</option>
-        <!-- Add more languages later -->
-      </select>
-    </div>
-
-    <h2>Welcome to NurMed</h2>
-    <p style="text-align: center;">
-      We aim to provide trusted, accessible healthcare through digital platforms. More language support and services coming soon.
-    </p>
-
-    <div class="feedback-form">
-      <h3>Send Us Your Feedback</h3>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="_replyto" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Submit Feedback</button>
-      </form>
-    </div>
-  </main>
-
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/923105510807" class="whatsapp-button" title="Chat with us on WhatsApp" target="_blank">
-    &#x1F4AC;
-  </a>
-
-</body>
-</html>         
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script></body>
+</html>
